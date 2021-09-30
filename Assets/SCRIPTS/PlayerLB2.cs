@@ -13,7 +13,7 @@ public class PlayerLB2 : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        if (Input.GetAxis("Horizontal") < 0)
+        if (Input.GetAxis("Horizontal") < 0 )
         {
 
             transform.localRotation = Quaternion.Euler(0, 0, 0);

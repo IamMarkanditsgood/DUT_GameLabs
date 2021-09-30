@@ -5,27 +5,36 @@ using UnityEngine.SceneManagement;
 public class TakeItem : MonoBehaviour
 {
     private bool nextItem = true;
+    Data Hp_And_Mana;
+    public GameObject data_script;
+    void Start()
+    {
+        Hp_And_Mana = data_script.GetComponent<Data>();
+    }
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Coin" && nextItem && Data.coin <= 100)
+        if (other.gameObject.tag == "Coin" && nextItem )
         {
+
             ++Data.coin;
             print("Coin" + Data.coin);
             Destroy(other.gameObject);
             nextItem = false;
             StartCoroutine(Timer());
         }
-        else if (other.gameObject.tag == "HP" && nextItem && Data.HP <= 100)
+        else if (other.gameObject.tag == "HP" && nextItem && Data.HP < 100)
         {
-            Data.HP += 2;
+            Hp_And_Mana.Hp.fillAmount += 0.2f;
+            Data.HP += 20;
             print("HP" + Data.HP);
             Destroy(other.gameObject);
             nextItem = false;
             StartCoroutine(Timer());
         }
-        else if (other.gameObject.tag == "Mana" && nextItem && Data.Mana <=100)
+        else if (other.gameObject.tag == "Mana" && nextItem && Data.Mana <100)
         {
-            Data.Mana += 2;
+            Hp_And_Mana.ManaImagen.fillAmount += 0.2f;
+            Data.Mana += 20;
             print("Mana" + Data.Mana);
             Destroy(other.gameObject);
             nextItem = false;

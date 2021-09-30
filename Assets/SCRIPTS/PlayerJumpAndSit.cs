@@ -50,8 +50,15 @@ public class PlayerJumpAndSit : MonoBehaviour
     {
         if (isGrounded && Input.GetKeyDown(KeyCode.Space) && !crouching)
         {
-            animator.SetTrigger("Jump");
             rb.AddForce(Vector2.up * Data.JumpForce, ForceMode2D.Impulse);
+        }
+        if(isGrounded)
+        {
+            animator.SetBool("Jump", false);
+        }
+        else
+        {
+            animator.SetBool("Jump", true);
         }
     }
 }
