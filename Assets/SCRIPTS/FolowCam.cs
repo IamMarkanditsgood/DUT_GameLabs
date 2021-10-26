@@ -15,6 +15,6 @@ public class FolowCam : MonoBehaviour
         position = who.position;
         position.z = -10f;
  
-        transform.position = Vector3.Lerp(transform.position, position, 1f * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, position, 2f * Time.deltaTime);
     }
 }

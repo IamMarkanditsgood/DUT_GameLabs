@@ -10,6 +10,6 @@ public class Folov : MonoBehaviour
     void Update()
     {
         position = who.position;
-        transform.position = Vector2.Lerp(transform.position, position, 100f * Time.deltaTime);
+        transform.position = Vector2.Lerp(transform.position, position, 150f * Time.deltaTime);
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PlayerJumpAndSit : MonoBehaviour
 {
-    private bool isGrounded;
+    public bool isGrounded;
     public Transform groundCheck;
     public float checkRadius;
     public LayerMask whatIsGround;
@@ -28,8 +28,12 @@ public class PlayerJumpAndSit : MonoBehaviour
     {
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, checkRadius, whatIsGround);
         isUp = Physics2D.OverlapCircle(upCheck.position, checkRadiusup, whatIsUp);
-        Sit();
-        Jump();
+        if(!Data.Death)
+        {
+            Sit();
+            Jump();
+        }
+       
     }
     private void Sit()
     {

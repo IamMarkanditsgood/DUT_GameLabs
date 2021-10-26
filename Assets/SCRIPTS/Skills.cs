@@ -16,15 +16,12 @@ public class Skills : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.V) && Data.isLamp && !lightCheck)
         {
-            print("fonarick good");
-      
             Sword.SetActive(false);
             FonarikInHend.SetActive(true);
             lightCheck = true;
         }
         else if (Input.GetKeyDown(KeyCode.V) && Data.isLamp && lightCheck)
         {
-         
             lightCheck = false;
             Sword.SetActive(true);
             FonarikInHend.SetActive(false);

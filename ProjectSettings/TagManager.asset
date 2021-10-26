@@ -9,6 +9,13 @@ TagManager:
   - HP
   - Mana
   - Thorn
+  - enemy
+  - weapon
+  - ' Projectile'
+  - PlayerBullet
+  - PlayerSword
+  - Wall
+  - RiflesProjectile
   layers:
   - Default
   - TransparentFX
@@ -17,10 +24,10 @@ TagManager:
   - Water
   - UI
   - ground
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Boss
+  - ' Projectile'
+  - Wall
   - 
   - 
   - 

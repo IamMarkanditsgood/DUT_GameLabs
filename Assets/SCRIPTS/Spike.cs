@@ -5,23 +5,15 @@ using UnityEngine;
 
 public class Spike : MonoBehaviour
 {
-
-
     [SerializeField] private float _damageDelay;
-
     private float _lastDamageTime;
-
     private PlayerLB2 _player;
     private Data Mana_And_Hp;
     public GameObject Data_Object;
-
-
     private void Start()
-    {
-       
+    {  
         Mana_And_Hp = Data_Object.GetComponent<Data>();
     }
-    // Start is called before the first frame update
     private void OnTriggerEnter2D(Collider2D other)
     {
         PlayerLB2 player = other.GetComponent<PlayerLB2>();
@@ -46,6 +38,7 @@ public class Spike : MonoBehaviour
         {
             _lastDamageTime = Time.time;
             Mana_And_Hp.Hp.fillAmount -= 0.1f;
+            Data.HP -= 10;
         }
 
      }
